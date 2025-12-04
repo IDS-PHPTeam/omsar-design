@@ -1,0 +1,1032 @@
+/* ------------------------------------------ */
+/*              Hero Section                  */
+/* ------------------------------------------ */
+.hero-section {
+    position: relative;
+    /* Fallback image if video isn't available */
+    background-image: url('../images/empowering.svg');
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    min-height: 90vh;
+    /* Full screen height */
+    padding-top: 90px;
+    /* Account for fixed navbar */
+    margin-top: 65px;
+    overflow: hidden;
+}
+
+.hero-bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* 1. Big Title Typography */
+.hero-title {
+    font-weight: 700;
+    /* Bold */
+    font-size: 60px;
+    /* 60px */
+    line-height: 1.3;
+    /* 130% */
+    letter-spacing: -0.005em;
+    /* -0.5% */
+    color: #000000;
+}
+
+/* 2. Description Typography */
+.hero-description {
+    font-weight: 500;
+    /* Medium */
+    font-size: 20px;
+    /* 20px */
+    line-height: 1.5;
+    /* 150% */
+    letter-spacing: -0.005em;
+    /* -0.5% */
+    color: #000000;
+}
+
+/* 3. Button Styling */
+.btn-custom {
+    background-color: #192D50;
+    color: #ffffff;
+    border-radius: 60px;
+    /* 60px radius */
+    padding: 8px 24px 8px 24px;
+    /* Adjust padding to match height ~41px */
+    font-weight: 500;
+    font-size: 14px;
+    /* Estimated font size for button text */
+    border: none;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-custom:hover {
+    background-color: #12223d;
+    /* Slightly darker on hover */
+    color: #ffffff;
+}
+
+/* Circle with > icon */
+.btn-custom .icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    /* Thin white border */
+    border-radius: 50%;
+}
+
+.btn-custom .icon-circle i {
+    font-size: 10px;
+    /* Small chevron icon */
+    line-height: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .hero-section {
+        min-height: auto;
+        padding-top: 140px;
+        padding-bottom: 60px;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 40px;
+        /* Smaller title on mobile */
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .col-lg-6 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* ------------------------------------------ */
+/*              Impact Section                */
+/* ------------------------------------------ */
+.background {
+    position: relative;
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/background.svg');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.impact-title {
+    font-weight: 600;
+    font-size: 32px;
+    /* Standard section title size, adjust if needed */
+    color: #000;
+    margin-bottom: 3rem;
+}
+
+/* Flex Container for Cards */
+.impact-cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 400px;
+    /* Fixed height for the cards */
+    padding-left: 20px;
+    /* Add some padding to account for the overlap shift if needed */
+}
+
+/* Individual Card Styling */
+.impact-card {
+    position: relative;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    flex: 1;
+    min-width: 225px;
+    margin-left: -20px;
+    padding: 25px;
+    /* SMOOTH TRANSITIONS */
+    /* animate flex (width), transform (scale), and background-color (fade to transparent) */
+    transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+        transform 0.4s ease,
+        background-color 0.4s ease;
+    /* BACKGROUND CONFIGURATION */
+    background-image: var(--bg-img);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    /* SET SIZE FROM SCREENSHOT */
+    /* Width 108px, Height auto (or 238px if you want to force it) */
+    background-size: 108px auto;
+    background-color: #ffffff;
+    z-index: 1;
+    /* Shadow setup */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05);
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* HOVER STATE */
+.impact-card:hover {
+    flex: 1.75;
+    z-index: 10;
+    transform: scale(1.02);
+    background-color: transparent;
+    /* Reveal gradient */
+    box-shadow: 0 20px 50px rgba(25, 45, 80, 0.15);
+}
+
+.impact-card:not(:first-child) {
+    margin-right: -90px;    
+    opacity: 0.7;
+}
+
+.impact-card:last-child {
+    margin-right: 0;
+}
+
+/* The Background Icon Image */
+.card-bg-icon {
+    position: absolute;
+    bottom: -10px;
+    /* Adjust to push it slightly off screen like the design */
+    right: -10px;
+    /* Adjust to push it slightly off screen like the design */
+    width: 150px;
+    /* Set a fixed width or percentage */
+    height: auto;
+    opacity: 0.5;
+    /* Adjust transparency if needed */
+    z-index: 0;
+    /* Sit behind the text */
+    pointer-events: none;
+    /* Click through to the card */
+    transition: transform 0.5s ease;
+    /* Optional: animate slightly on hover */
+}
+
+/* Ensure Text stays on top */
+.card-content {
+    position: relative;
+    z-index: 2;
+    /* Sit on top of the image */
+    min-width: 200px;
+    white-space: nowrap;
+}
+
+/* Optional: Move image slightly on hover for effect */
+.impact-card:hover .card-bg-icon {
+    transform: scale(1.1);
+}
+
+.impact-card:hover {
+    opacity: 1;
+}
+
+/* Fix the first card so it doesn't pull off screen */
+.impact-card:first-child {
+    margin-left: 0;
+}
+
+/* Expand on Hover */
+/* .impact-card:hover {
+    flex: 3; /* Expands */
+/* z-index: 10; /* Bring to front on hover */
+/* transform: scale(1.02); /* Slight pop up effect */
+/* box-shadow: 0 15px 40px rgba(25, 45, 80, 0.2); /* larger shadow */
+/* } */
+
+/* Also make the first one active by default or if you want one always open */
+/* .impact-card.active { flex: 3; } */
+/* Only use .active if you want one expanded by default without hover */
+
+/* Typography */
+.card-content {
+    min-width: 200px;
+    /* Prevents text wrapping too tightly when collapsed */
+    white-space: nowrap;
+    /* Keeps text on same lines during animation */
+}
+
+.card-number {
+    font-weight: 600;
+    /* Semi Bold */
+    font-size: 35px;
+    /* 35px */
+    line-height: 1.1;
+    /* Adjusted from 35% to be readable */
+    letter-spacing: -0.005em;
+    /* -0.5% */
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.card-text {
+    font-weight: 500;
+    /* Medium */
+    font-size: 24px;
+    /* 24px */
+    line-height: 1.4;
+    /* 140% */
+    letter-spacing: -0.005em;
+    /* -0.5% */
+    color: #000000;
+}
+
+.digital-transformation-card {
+    /* Define background layers */
+    background: #fff url('../images/digits-transformation-projects.svg') no-repeat right bottom;
+
+    /* Fix: Use only two values (Width Height) */
+    background-size: 200px 238px;
+}
+
+.digital-transformation-card:hover {
+    background: url('../images/digits-transformation-projects.svg') no-repeat right bottom,
+        linear-gradient(180deg, #E0F2FF 0%, #6EA8FE 100%);
+
+    /* Fix: First layer (image) size, Second layer (gradient) size */
+    background-size: 200px 238px, auto;
+}
+
+.e-services-card {
+    background: #fff url('../images/e-services-implemented.svg') no-repeat right bottom;
+    background-size: 234px 238px;
+}
+
+.e-services-card:hover {
+    /* Correct Syntax: Image FIRST, then Gradient */
+    background: url('../images/e-services-implemented.svg') no-repeat right bottom,
+        linear-gradient(180deg, #E0F2FF 0%, #6EA8FE 100%);
+
+    /* Ensure background size stays consistent */
+    background-size: 234px 238px, auto;
+    /* First size for image, second for gradient */
+}
+
+.public-servants-card {
+    background: #fff url('../images/public-servants-trained.svg') no-repeat right bottom;
+    background-size: 234px 238px;
+}
+
+
+.public-servants-card:hover {
+    /* Correct Syntax: Image FIRST, then Gradient */
+    background: url('../images/public-servants-trained.svg') no-repeat right bottom,
+        linear-gradient(180deg, #E0F2FF 0%, #6EA8FE 100%);
+
+    /* Ensure background size stays consistent */
+    background-size: 234px 238px, auto;
+    /* First size for image, second for gradient */
+}
+
+.reform-programs-card {
+    background: #fff url('../images/reform-programs.svg') no-repeat right bottom;
+    background-size: 200px 238px;
+}
+
+
+.reform-programs-card:hover {
+    /* Correct Syntax: Image FIRST, then Gradient */
+    background: url('../images/reform-programs.svg') no-repeat right bottom,
+        linear-gradient(180deg, #E0F2FF 0%, #6EA8FE 100%);
+
+    /* Ensure background size stays consistent */
+    background-size: 200px 238px, auto;
+    /* First size for image, second for gradient */
+}
+
+.anti-corruption-card {
+    background: #fff url('../images/anti-corruption-initiatives.svg') no-repeat right bottom;
+    background-size: 200px 238px;
+}
+
+.anti-corruption-card:hover {
+    /* Correct Syntax: Image FIRST, then Gradient */
+    background: url('../images/anti-corruption-initiatives.svg') no-repeat right bottom,
+        linear-gradient(180deg, #E0F2FF 0%, #6EA8FE 100%);
+
+    /* Ensure background size stays consistent */
+    background-size: 200px 238px, auto;
+    /* First size for image, second for gradient */
+}
+
+/* Responsive: Stack vertically on mobile */
+@media (max-width: 991.98px) {
+    .impact-cards-container {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .impact-card {
+        height: 250px;
+        /* Fixed height for mobile items */
+        width: 100%;
+        flex: none !important;
+        margin-left: 0;
+        margin-right: 0;
+        /* Disable flex expansion on mobile */
+    }
+
+    .card-content {
+        white-space: normal;
+    }
+}
+
+/* ------------------------------------------ */
+/*              Pillars Section               */
+/* ------------------------------------------ */
+.section-title {
+    font-weight: 600;
+    font-size: 40px;
+    color: #000;
+    margin-bottom: 2rem;
+}
+
+.pillar-card {
+    border-radius: 24px;
+    padding: 32px;
+    height: 500px;
+    /* Fixed height to match design aspect */
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    transition: transform 0.3s ease;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: inherit;
+}
+
+.pillar-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Title Typography */
+.pillar-title {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.3;
+    margin-bottom: 0;
+    z-index: 2;
+    position: relative;
+}
+
+/* Description Typography */
+.pillar-desc {
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 1.5;
+    opacity: 0.8;
+    max-width: 90%;
+    z-index: 2;
+    position: relative;
+}
+
+.pillar-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 2;
+    position: relative;
+}
+
+.pillar-link:hover {
+    opacity: 0.9;
+}
+
+.pillar-arrow {
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+
+/* Background Image Layer */
+.pillar-digital {
+    background-image: url('../images/digital-trans.svg');
+}
+
+.pillar-corruption {
+    background-image: url('../images/anti-corrup.svg');
+}
+
+.pillar-reform {
+    background-image: url('../images/admin-reform.svg');
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pillar-card {
+        height: auto;
+        min-height: 300px;
+    }
+}
+
+/* ------------------------------------------ */
+/*           Latest Projects Section          */
+/* ------------------------------------------ */
+.latest-projects-section {
+    /* Assuming you want the same background pattern continuing or a specific one */
+    /* background-color: ...; */
+    overflow: hidden;
+    /* Hide scrollbar if items pop out */
+}
+
+.project-card {
+    position: relative;
+    height: 350px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transform: scale(0.85);
+    opacity: 0.6;
+    transition: all 0.4s ease;
+    margin: 20px 0;
+    /* Ensure the background is positioned right on mobile */
+}
+
+/* Ensure radius is visible and background position is correct on mobile */
+@media (max-width: 768px) {
+    .project-card {
+        background-position: right center !important;
+        border-radius: 20px !important;
+        /* Ensure the overflow is hidden so border-radius works */
+        overflow: hidden !important;
+        transform: scale(1);
+        /* Reset scale on mobile if needed */
+        opacity: 1;
+        /* Make fully visible */
+    }
+
+    /* Adjust container padding if needed */
+    .projects-carousel .owl-stage-outer {
+        padding-top: 0;
+    }
+}
+
+/* The Overlay (Gradient Blue) */
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Blue gradient overlay similar to design */
+    background: linear-gradient(90deg, rgba(110, 168, 254, 0.85) 0%, rgba(224, 242, 255, 0.4) 100%);
+    z-index: 1;
+}
+
+/* Content Styling */
+.project-content {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #fff;
+}
+
+.project-title {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.project-subtitle {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 44px;
+    padding: 4px 12px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.project-desc {
+    font-size: 15px;
+    margin-bottom: 25px;
+    max-width: 80%;
+    line-height: 1.6;
+}
+
+/* Active/Center Item Styling */
+.owl-item.center .project-card {
+    /* Combine Scale + Move Up */
+    /* scale(1.1) makes it slightly larger than 'normal' size if needed, or keep 1 if others are 0.85 */
+    /* translateY(-20px) moves it UP */
+    transform: scale(1) translateY(-50px);
+
+    opacity: 1;
+    z-index: 10;
+}
+
+/* Add padding to the top of the carousel stage so the lifted item doesn't get cut off */
+.projects-carousel .owl-stage-outer {
+    padding-top: 20px;
+    /* Space for the translateY(-30px) */
+    /* Ensure overflow isn't clipping the pop-out */
+    /* Owl Carousel applies overflow:hidden to .owl-stage-outer by default. 
+       Adding padding INSIDE this wrapper fixes the clip. */
+}
+
+/* Owl Dots Styling */
+.owl-theme .owl-dots .owl-dot span {
+    width: 10px;
+    height: 10px;
+    margin: 5px 7px;
+    background: transparent;
+    border: 1px solid #6EA8FE;
+}
+
+.owl-theme .owl-dots .owl-dot.active span {
+    background: #6EA8FE;
+}
+
+@media(min-width: 1919px) {
+    .project-card {
+        height: 455px;
+    }
+}
+
+/* ------------------------------------------ */
+/*            Latest News Section             */
+/* ------------------------------------------ */
+
+/* Spacing for the cut-off effect */
+.news-carousel .item {
+    margin-left: 20px;
+}
+
+.news-carousel .owl-item:first-child .item {
+    margin-left: 0;
+}
+
+.news-card {
+    position: relative;
+    height: 415px;
+    /* Updated from screenshot (approx 430.36) */
+    border-radius: 20px;
+    /* Updated from screenshot */
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Dark Overlay */
+/* The screenshot showed 30% opacity on a layer. 
+   Assuming this is the gradient overlay strength or a base tint. */
+.news-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Gradient from transparent to black. 
+       Adjusted bottom opacity to 0.9 based on readability needs, 
+       but you can lower it to 0.3 if the image is meant to be brighter. */
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.9) 100%);
+    z-index: 1;
+}
+
+.news-content {
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #fff;
+}
+
+.news-date {
+    font-size: 14px;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+}
+
+.news-date-icon {
+    width: 28px !important;
+    height: 28px;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.news-date i {
+    margin-right: 8px;
+}
+
+.news-title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 110px;
+}
+
+.news-content .btn {
+    font-size: 14px;
+    padding: 8px 24px;
+}
+
+
+.access-info-card {
+    background-color: #F8F9FA;
+    /* Light gray/white background */
+    /* Add your pattern image here if you have one */
+    background-image: url('../images/pattern-bg.svg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 24px;
+    overflow: hidden;
+    /* Optional shadow */
+    /* box-shadow: 0 10px 30px rgba(0,0,0,0.05); */
+}
+
+/* Badge / Pill Title */
+.badge-custom {
+    display: inline-block;
+    background-color: #E0F2FF;
+    /* Light Blue */
+    color: #0056b3;
+    /* Darker Blue Text */
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 50px;
+}
+
+/* Typography */
+.access-title {
+    font-weight: 700;
+    font-size: 36px;
+    color: #000;
+}
+
+.access-desc {
+    font-weight: 400;
+    font-size: 18px;
+    color: #555;
+    max-width: 90%;
+}
+
+/* Buttons */
+.btn-primary-custom {
+    background-color: #192D50;
+    /* Deep Blue */
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn-primary-custom:hover {
+    background-color: #12223d;
+    color: #fff;
+}
+
+.btn-outline-custom {
+    background-color: transparent;
+    color: #192D50;
+    border: 1px solid #192D50;
+    padding: 10px 24px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-outline-custom:hover {
+    background-color: #192D50;
+    color: #fff;
+}
+
+/* Image Styling */
+.access-img {
+    max-height: 350px;
+    /* Adjust based on image aspect ratio */
+    /* If you want the image to hang off the bottom or have specific positioning, adjust here */
+}
+
+/* ------------------------------------------ */
+/*             Minister Section               */
+/* ------------------------------------------ */
+
+.minister-card {
+    background-color: #FFFFFF;
+    /* Add the subtle line pattern background image here if available */
+    background-image: url('../images/fadi-pattern.svg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 24px;
+    /* Soft large shadow */
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+    overflow: visible;
+    /* Allow image to overlap if needed, or hidden if contained */
+    position: relative;
+}
+
+/* Blue Badge */
+.badge-minister {
+    display: inline-block;
+    background: linear-gradient(0deg, #4C8CFE 0%, #A9C8FF 100%);
+    /* Lighter Blue from design */
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 20px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    /* Slightly squared corners */
+}
+
+/* Name Title */
+.minister-name {
+    font-weight: 600;
+    /* Semibold Bold */
+    font-size: 20px;
+    color: #000;
+}
+
+/* Quote Body */
+.minister-quote {
+    /* Or a Serif font if preferred */
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    max-width: 95%;
+}
+
+/* Attribution */
+.quote-author {
+    font-size: 16px;
+    color: #000;
+    font-style: italic;
+}
+
+/* Image Styling */
+.minister-img {
+    /* Adjust styling to match the cutout look */
+    max-height: 400px;
+    vertical-align: bottom;
+    /* Aligns image to bottom of col */
+    margin-bottom: -1px;
+    /* Fix specific pixel gaps */
+    border-bottom-right-radius: 24px;
+    /* Match card radius if contained */
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+    .minister-card {
+        text-align: left;
+    }
+
+    .minister-img {
+        max-height: 300px;
+        margin-top: 20px;
+    }
+
+    .col-lg-7.p-5 {
+        padding: 2rem !important;
+    }
+}
+
+/* ------------------------------------------ */
+/*            Testimonials Section            */
+/* ------------------------------------------ */
+.testimonials-section {
+    /* Adjust if section needs background */
+    overflow: hidden;
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 70px 40px;
+    transition: all 0.4s ease;
+    height: 100%;
+    position: relative;
+    opacity: 0.8;
+    /* Fade inactive items slightly */
+    transform: scale(0.9);
+    min-height: 450px;
+    /* Scale down inactive items */
+}
+
+/* Quote Icon */
+.quote-icon {
+    width: 52px;
+    height: 32px;
+    margin-bottom: 20px;
+    background-image: url('../images/quote.svg');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: contain;
+}
+
+/* Text */
+.testimonial-text {
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 300;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+/* Author */
+.author-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.author-role {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+}
+
+/* ------------------------------------------ */
+/*        Center / Active Item Styles         */
+/* ------------------------------------------ */
+.owl-item.center .testimonial-card {
+    background: url('../images/voices-pattern.svg');
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: relative;
+    opacity: 0.8;
+    transform: scale(1) translateY(-40px);
+    /* Pop up effect */
+    opacity: 1;
+    color: #000;
+    /* Keep text dark as per screenshot, or white if preferred */
+}
+
+/* Change icon color on active card */
+.owl-item.center .quote-icon {
+    color: rgba(0, 0, 0, 0.1);
+    /* Darker quote icon */
+}
+
+/* Ensure text colors work on the blue background */
+.owl-item.center .testimonial-text {
+    color: #192D50;
+}
+
+.testimonial-author .author-name, .author-role{
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* .owl-item.center .author-name {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.owl-item.center .author-role {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+} */
+
+/* ------------------------------------------ */
+/*             Navigation Arrows              */
+/* ------------------------------------------ */
+.testimonials-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    /* Allow clicks to pass through the container area */
+    display: flex;
+    justify-content: space-between;
+}
+
+.testimonials-carousel .owl-nav button.owl-prev,
+.testimonials-carousel .owl-nav button.owl-next {
+    pointer-events: auto;
+    /* Re-enable clicks on buttons */
+    background: transparent !important;
+    color: #000 !important;
+    font-size: 24px !important;
+    width: 40px;
+    height: 40px;
+    /* Position them outside the items */
+    position: absolute;
+}
+
+.testimonials-carousel .owl-nav button.owl-prev {
+    left: -40px;
+    /* Adjust based on container width */
+}
+
+.testimonials-carousel .owl-nav button.owl-next {
+    right: -40px;
+    /* Adjust based on container width */
+}
+
+/* Hover effect for arrows */
+.testimonials-carousel .owl-nav button:hover {
+    color: #6EA8FE !important;
+}
+
+/* Container padding to show shadow/pop-up without clip */
+.testimonials-carousel .owl-stage-outer {
+    padding-top: 70px;
+    padding-bottom: 50px;
+    /* Allow visible overflow if arrows need to sit outside or cards pop out */
+    overflow: visible;
+}
+
+
+/* Footer styles moved to css/header-footer.css */

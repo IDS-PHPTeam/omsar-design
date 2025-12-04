@@ -1,0 +1,276 @@
+/* ------------------------------------------ */
+/*                 Header (Navbar)            */
+/* ------------------------------------------ */
+.navbar {
+    min-height: 90px;
+    /* Define a fixed height for calculation */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition */
+}
+
+.nav-link {
+    font-weight: 500;
+    /* Medium */
+    font-size: 14px;
+    /* 14px */
+    line-height: 1.5;
+    /* 150% */
+    letter-spacing: -0.005em;
+    /* -0.5% */
+    color: #000000;
+    /* Black */
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+/* Language Button Styling - YOUR CUSTOM CHANGES PRESERVED */
+.lang-toggle {
+    width: 29px;
+    height: 29px;
+    background-color: #e8eaed;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+}
+
+/* Logo Styling - YOUR CUSTOM CHANGES PRESERVED */
+.logo-image {
+    width: 72px;
+    height: 98px;
+}
+
+/* ------------------------------------------ */
+/*        Burger Menu to X Animation          */
+/* ------------------------------------------ */
+.navbar-toggler {
+    border: none;
+    padding: 0;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    transition: .5s ease-in-out;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler .icon-bar {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #003366;
+    /* Dark Blue color */
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+    transform-origin: center;
+}
+
+.navbar-toggler .top-bar {
+    top: 0px;
+}
+
+.navbar-toggler .middle-bar {
+    top: 9px;
+}
+
+.navbar-toggler .bottom-bar {
+    top: 18px;
+}
+
+/* Animation State when Open (aria-expanded="true") */
+.navbar-toggler[aria-expanded="true"] .top-bar {
+    top: 9px;
+    transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .middle-bar {
+    opacity: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .bottom-bar {
+    top: 9px;
+    transform: rotate(-45deg);
+}
+
+/* ------------------------------------------ */
+/*      Mobile Full Screen Overlay Menu       */
+/* ------------------------------------------ */
+@media (max-width: 991.98px) {
+
+    /* Logo Styling Mobile - YOUR CUSTOM CHANGES PRESERVED */
+    .logo-image {
+        width: 56px;
+        height: 72px;
+    }
+
+    .navbar-collapse {
+        position: fixed;
+        top: 90px;
+        /* Matches navbar min-height */
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: calc(100vh - 90px);
+        background-color: white;
+        padding: 2rem;
+        overflow-y: auto;
+
+        /* Start hidden/collapsed */
+        display: block;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+
+        /* Ensure it covers other content */
+        z-index: 1000;
+    }
+
+    /* When menu is showing */
+    .navbar-collapse.show,
+    .navbar-collapse.collapsing {
+        transform: translateX(0);
+        display: block;
+    }
+
+    /* Reset Bootstrap's collapsing height animation since we use transform */
+    .navbar-collapse.collapsing {
+        height: calc(100vh - 90px) !important;
+        position: fixed;
+        overflow: hidden;
+    }
+
+    .navbar-nav {
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+
+    .nav-item {
+        margin-bottom: 1rem;
+    }
+
+    /* REMOVED .action-icons styles from here as they are now in the header */
+}
+
+/* ------------------------------------------ */
+/*                 Footer                     */
+/* ------------------------------------------ */
+.footer-section {
+    padding-top: 40px;
+    /* Increased padding */
+    color: #192D50;
+    /* Dark Blue Text */
+}
+
+.footer-heading {
+    font-weight: 700;
+    /* Bold */
+    font-size: 13px;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+    /* -0.5% */
+    text-transform: uppercase;
+    color: #192D50;
+    margin-bottom: 1.5rem;
+    /* Increased margin bottom */
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+    /* Increased margin for spacing */
+}
+
+.footer-links a {
+    font-weight: 500;
+    /* Medium */
+    font-size: 13px;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+    /* -0.5% */
+    color: #192D50;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #0d6efd;
+    text-decoration: underline;
+}
+
+.footer-contact {
+    font-weight: 500;
+    /* Medium */
+    font-size: 13px;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+    color: #192D50;
+}
+
+.footer-contact li {
+    margin-bottom: 16px;
+    /* Increased margin for spacing */
+}
+
+.footer-contact .fw-bold {
+    font-weight: 700 !important;
+    /* Bold for labels like Address: */
+}
+
+.social-icons {
+    margin-top: 0px;
+    /* Removed top margin to align with title */
+}
+
+.social-icon-img {
+    width: 26px;
+    /* Adjusted size to match uploaded SVGs (26x26) */
+    height: 26px;
+    display: inline-block;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon-img:hover {
+    opacity: 0.8;
+}
+
+.footer-divider {
+    border-color: #192D50;
+    opacity: 1;
+    /* Made fully opaque/bold */
+    border-top-width: 1px;
+    /* Thin bold line */
+    margin: 0;
+}
+
+.copyright-text {
+    font-weight: 300;
+    /* Light */
+    font-size: 12px;
+    line-height: 1.3;
+    letter-spacing: -0.005em;
+    /* -0.5% */
+    color: #192D50 !important;
+    /* Specified color */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-heading {
+        margin-top: 20px;
+    }
+
+    .social-icons {
+        justify-content: flex-start;
+        margin-bottom: 20px;
+    }
+}
+
+
