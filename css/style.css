@@ -512,6 +512,8 @@
 /* Ensure radius is visible and background position is correct on mobile */
 @media (max-width: 768px) {
     .project-card {
+        height: auto;
+        min-height: 320px;
         background-position: right center !important;
         border-radius: 20px !important;
         /* Ensure the overflow is hidden so border-radius works */
@@ -520,6 +522,15 @@
         /* Reset scale on mobile if needed */
         opacity: 1;
         /* Make fully visible */
+        margin: 10px 16px; /* horizontal margin so left/right radius is visible */
+    }
+
+    .project-content {
+        padding: 24px;
+    }
+
+    .owl-item.center .project-card {
+        transform: none;
     }
 
     /* Adjust container padding if needed */
@@ -581,7 +592,7 @@
     /* Combine Scale + Move Up */
     /* scale(1.1) makes it slightly larger than 'normal' size if needed, or keep 1 if others are 0.85 */
     /* translateY(-20px) moves it UP */
-    transform: scale(1) translateY(-50px);
+    transform: scale(1) translateY(-30px);
 
     opacity: 1;
     z-index: 10;

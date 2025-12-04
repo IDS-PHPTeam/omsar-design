@@ -24,8 +24,8 @@ $(document).ready(function(){
         responsive:{
             0:{
                 items: 1,
-                center: false, // Disable center mode on mobile to fix left cropping
-                stagePadding: 20 // Add some padding to see part of next item if desired, or 0 for full width
+                center: false, // Disable center mode on mobile
+                stagePadding: 0 // Full-width cards on mobile
             },
             768:{
                 items: 1.5
