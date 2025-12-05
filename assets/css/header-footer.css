@@ -23,6 +23,29 @@
     padding-right: 1rem !important;
 }
 
+/* Dropdown Menu Hover Functionality for Desktop */
+@media (min-width: 992px) {
+    .nav-item.dropdown {
+        position: relative;
+    }
+
+    .nav-item.dropdown .dropdown-menu {
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Show dropdown on hover - works alongside Bootstrap's click functionality */
+    .nav-item.dropdown:hover > .dropdown-menu {
+        display: block;
+    }
+
+    /* Keep dropdown open when hovering over the dropdown menu itself */
+    .nav-item.dropdown .dropdown-menu:hover {
+        display: block;
+    }
+}
+
 /* Language Button Styling - YOUR CUSTOM CHANGES PRESERVED */
 .lang-toggle {
     width: 29px;

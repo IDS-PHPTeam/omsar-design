@@ -155,6 +155,20 @@
     /* Add some padding to account for the overlap shift if needed */
 }
 
+.impact-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgb(255 255 255 / 77%);
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    border-radius: 20px;
+}
+/* Remove white overlay on hover */
+.impact-card:hover::before {
+   opacity: 0;
+}
 /* Individual Card Styling */
 .impact-card {
     position: relative;
@@ -182,8 +196,9 @@
     z-index: 1;
     /* Shadow setup */
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05);
-    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    border-left: 1px solid rgba(0, 0, 0, 0.05);   
 }
+
 
 /* HOVER STATE */
 .impact-card:hover {
@@ -295,7 +310,6 @@
 .digital-transformation-card {
     /* Define background layers */
     background: #fff url('../images/digits-transformation-projects.svg') no-repeat right bottom;
-
     /* Fix: Use only two values (Width Height) */
     background-size: 200px 238px;
 }
@@ -607,6 +621,14 @@
        Adding padding INSIDE this wrapper fixes the clip. */
 }
 
+.projects-carousel.owl-theme .owl-dots .owl-dot span{
+    background: #6EA8FE !important;
+}
+
+.projects-carousel.owl-theme .owl-dots .owl-dot.active span{
+    background: #0267ff !important;
+}
+
 /* Owl Dots Styling */
 .owl-theme .owl-dots .owl-dot span {
     width: 10px;
@@ -639,6 +661,14 @@
     margin-left: 0;
 }
 
+.news-carousel.owl-theme .owl-dots .owl-dot span{
+    background: #000 !important;
+    border: #000;
+}
+
+.news-carousel.owl-theme .owl-dots .owl-dot.active span{
+    background: #494949 !important;
+}
 .news-card {
     position: relative;
     height: 415px;
@@ -1038,6 +1068,13 @@
     /* Allow visible overflow if arrows need to sit outside or cards pop out */
     overflow: visible;
 }
+.testimonials-carousel.owl-theme .owl-dots .owl-dot span{
+    background: #6EA8FE !important;
+    border: #6EA8FE;
+}
 
+.testimonials-carousel.owl-theme .owl-dots .owl-dot.active span{
+    background: #0066ff !important;
+}
 
 /* Footer styles moved to css/header-footer.css */
