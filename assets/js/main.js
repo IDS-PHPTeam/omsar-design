@@ -18,6 +18,7 @@ $(document).ready(function(){
         center: true,
         items: 2,
         loop: true,
+        autoplay: true,
         margin: 20,
         nav: false,
         dots: true,
@@ -38,8 +39,9 @@ $(document).ready(function(){
 
     // Latest News Carousel
     $(".news-carousel").owlCarousel({
-        items: 3, // Show 2 and a half
+        items: 3, 
         loop: true,
+        autoplay: true,
         margin: 20,
         nav: false,
         dots: true,
@@ -62,6 +64,7 @@ $(document).ready(function(){
         center: true,
         items: 3,
         loop: true,
+        autoplay: true,
         margin: 30,
         nav: false,
         navText: ["<i class='bi bi-chevron-left'></i>", "<i class='bi bi-chevron-right'></i>"],
