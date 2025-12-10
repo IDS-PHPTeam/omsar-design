@@ -10,9 +10,9 @@
     background-repeat: no-repeat;
     min-height: 90vh;
     /* Full screen height */
-    padding-top: 90px;
+    /* padding-top: 60px; */
     /* Account for fixed navbar */
-    margin-top: 100px;
+    margin-top: 68px;
     overflow: hidden;
 }
 
@@ -772,7 +772,10 @@
 .latest-news-section {
     overflow: hidden; /* Hide overflow to create cut-off effect */
 }
-
+.carousel-container.col-12{
+    padding-right: 0px;
+    padding-left: 0px;
+}
 /* Spacing for the cut-off effect */
 .news-carousel .item {
     margin-left: 20px;
