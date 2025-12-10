@@ -405,6 +405,22 @@
         margin-left: 0;
         margin-right: 0;
         /* Disable flex expansion on mobile */
+        pointer-events: none;
+        /* Disable clicks on mobile */
+    }
+    
+    /* Disable hover effects on mobile */
+    .impact-card:hover {
+        flex: none !important;
+        transform: none !important;
+        z-index: 1 !important;
+        background-color: #ffffff !important;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05) !important;
+        max-width: none !important;
+    }
+    
+    .impact-card:hover::before {
+        opacity: 1 !important;
     }
 
     .card-content {
@@ -1248,11 +1264,12 @@
     }
 }
 
-/* @media (min-width: 768px) {
-    .pillars-section .col-md-4{
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .pillars-section .col-md-4 {
         width: 50%;
     }
-} */
+}
+
 
 
 /* Footer styles moved to css/header-footer.css */
