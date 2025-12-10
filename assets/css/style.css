@@ -10,9 +10,9 @@
     background-repeat: no-repeat;
     min-height: 90vh;
     /* Full screen height */
-    padding-top: 90px;
+    /* padding-top: 60px; */
     /* Account for fixed navbar */
-    margin-top: 65px;
+    margin-top: 68px;
     overflow: hidden;
 }
 
@@ -151,10 +151,13 @@
     margin: 0 auto;
     height: 400px;
     /* Fixed height for the cards */
-    padding-left: 20px;
+    /* padding-left: 20px; */
     /* Add some padding to account for the overlap shift if needed */
 }
 
+/* .impact-cards-container:hover {
+    max-width: 1000px;
+} */
 .impact-card::before {
     content: "";
     position: absolute;
@@ -175,7 +178,7 @@
     height: 100%;
     border-radius: 20px;
     overflow: hidden;
-    cursor: pointer;
+    /* cursor: pointer; */
     flex: 1;
     min-width: 225px;
     margin-left: -20px;
@@ -208,11 +211,12 @@
     background-color: transparent;
     /* Reveal gradient */
     box-shadow: 0 20px 50px rgba(25, 45, 80, 0.15);
+    max-width: 400px !important;
 }
 
 .impact-card:not(:first-child) {
     margin-right: -90px;    
-    opacity: 0.7;
+    /* opacity: 0.7; */
 }
 
 .impact-card:last-child {
@@ -394,18 +398,85 @@
     }
 
     .impact-card {
-        height: 250px;
+        height: 165px;
         /* Fixed height for mobile items */
         width: 100%;
         flex: none !important;
         margin-left: 0;
         margin-right: 0;
         /* Disable flex expansion on mobile */
+        pointer-events: none;
+        /* Disable clicks on mobile */
+    }
+    
+    /* Disable hover effects on mobile */
+    .impact-card:hover {
+        flex: none !important;
+        transform: none !important;
+        z-index: 1 !important;
+        background-color: #ffffff !important;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05) !important;
+        max-width: none !important;
+    }
+    
+    .impact-card:hover::before {
+        opacity: 1 !important;
     }
 
     .card-content {
         white-space: normal;
     }
+
+    
+.digital-transformation-card {
+    background-size: 110px 135px;
+}
+
+.digital-transformation-card:hover {
+    /* Fix: First layer (image) size, Second layer (gradient) size */
+    background-size: 110px 135px, auto;
+}
+
+.e-services-card {
+    background-size: 110px 135px !important;
+}
+
+.e-services-card:hover {
+    background-size: 110px 135px, auto;
+
+}
+
+.public-servants-card {
+    background-size: 110px 135px;
+}
+
+
+.public-servants-card:hover {
+    background-size: 110px 135px, auto;
+    /* First size for image, second for gradient */
+}
+
+.reform-programs-card {
+    background-size: 110px 135px;
+}
+
+
+.reform-programs-card:hover {
+
+    background-size: 110px 135px, auto;
+    /* First size for image, second for gradient */
+}
+
+.anti-corruption-card {
+    background-size: 110px 135px;
+}
+
+.anti-corruption-card:hover {
+  
+    background-size: 110px 135px, auto;
+    /* First size for image, second for gradient */
+}
+
 }
 
 /* ------------------------------------------ */
@@ -494,8 +565,19 @@
 @media (max-width: 768px) {
     .pillar-card {
         height: auto;
-        min-height: 300px;
+        min-height: 260px;
     }
+    .pillar-title {
+    font-size:20px;
+    
+}
+
+/* Description Typography */
+.pillar-desc {
+    font-weight: 200;
+    font-size: 18px;
+    
+}
 }
 
 /* ------------------------------------------ */
@@ -510,19 +592,49 @@
 
 .project-card {
     position: relative;
-    height: 350px;
+    height: 330px;
     border-radius: 20px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
     transform: scale(0.85);
-    opacity: 0.6;
+    /* opacity: 0.6; */
     transition: all 0.4s ease;
     margin: 20px 0;
     /* Ensure the background is positioned right on mobile */
 }
 
+
+.projects-carousel-wrapper {
+    position: relative;
+}
+
+/* LEFT FADE */
+.projects-carousel-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 160px;
+    height: 100%;
+    background: linear-gradient(to right, #fff, transparent);
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* RIGHT FADE */
+.projects-carousel-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 160px;
+    height: 100%;
+    background: linear-gradient(to left, #fff, transparent);
+    z-index: 10;
+    pointer-events: none;
+}
 /* Ensure radius is visible and background position is correct on mobile */
 @media (max-width: 768px) {
     .project-card {
@@ -549,7 +661,14 @@
 
     /* Adjust container padding if needed */
     .projects-carousel .owl-stage-outer {
-        padding-top: 0;
+        padding-top: 0 !important;
+    }
+    .title-section{
+        margin-bottom: unset !important;
+    }
+    .projects-carousel-wrapper::before,
+    .projects-carousel-wrapper::after{
+        content: unset !important;
     }
 }
 
@@ -601,6 +720,12 @@
     line-height: 1.6;
 }
 
+/* Ensure non-center items always maintain base styling */
+.owl-item:not(.center) .project-card {
+    transform: scale(1.0) !important;
+    /* opacity: 0.6 !important; */
+}
+
 /* Active/Center Item Styling */
 .owl-item.center .project-card {
     /* Combine Scale + Move Up */
@@ -615,6 +740,7 @@
 /* Add padding to the top of the carousel stage so the lifted item doesn't get cut off */
 .projects-carousel .owl-stage-outer {
     padding-top: 20px;
+    overflow: unset !important;
     /* Space for the translateY(-30px) */
     /* Ensure overflow isn't clipping the pop-out */
     /* Owl Carousel applies overflow:hidden to .owl-stage-outer by default. 
@@ -646,12 +772,26 @@
     .project-card {
         height: 455px;
     }
+    /* .project-title {
+    font-size: 20px;
+}
+
+
+.project-desc {
+    font-size: 18px;
+} */
 }
 
 /* ------------------------------------------ */
 /*            Latest News Section             */
 /* ------------------------------------------ */
-
+.latest-news-section {
+    overflow: hidden; /* Hide overflow to create cut-off effect */
+}
+.carousel-container.col-12{
+    padding-right: 0px;
+    padding-left: 0px;
+}
 /* Spacing for the cut-off effect */
 .news-carousel .item {
     margin-left: 20px;
@@ -661,13 +801,18 @@
     margin-left: 0;
 }
 
+/* Ensure the carousel container clips the overflow */
+.news-carousel .owl-stage-outer {
+    overflow: hidden;
+}
+
 .news-carousel.owl-theme .owl-dots .owl-dot span{
-    background: #000 !important;
+    background: #494949 !important;
     border: #000;
 }
 
 .news-carousel.owl-theme .owl-dots .owl-dot.active span{
-    background: #494949 !important;
+    background: #000 !important;
 }
 .news-card {
     position: relative;
@@ -746,8 +891,12 @@
     font-size: 14px;
     padding: 8px 24px;
 }
-
-
+.view-all-btn{
+    margin-top: 10px;
+}
+.news-carousel .owl-nav.disabled+.owl-dots {
+    margin-top: 20px !important;
+}
 .access-info-card {
     background-color: #F8F9FA;
     /* Light gray/white background */
@@ -948,7 +1097,7 @@
     font-style: italic;
     font-size: 16px;
     line-height: 1.6;
-    font-weight: 300;
+    font-weight: 500;
     color: #000;
     margin-bottom: 30px;
 }
@@ -1063,8 +1212,8 @@
 
 /* Container padding to show shadow/pop-up without clip */
 .testimonials-carousel .owl-stage-outer {
-    padding-top: 70px;
-    padding-bottom: 50px;
+    /* padding-top: 70px; */
+    /* padding-bottom: 50px; */
     /* Allow visible overflow if arrows need to sit outside or cards pop out */
     overflow: visible;
 }
@@ -1076,5 +1225,51 @@
 .testimonials-carousel.owl-theme .owl-dots .owl-dot.active span{
     background: #0066ff !important;
 }
+
+.testimonials-carousel .owl-nav.disabled+.owl-dots {
+    margin-top: -35px !important;
+}
+
+/* Ensure dots are clickable on mobile */
+.testimonials-carousel .owl-dots {
+    position: relative;
+    z-index: 20;
+    pointer-events: auto !important;
+}
+
+.testimonials-carousel .owl-dots .owl-dot {
+    pointer-events: auto !important;
+    cursor: pointer;
+}
+
+.testimonials-carousel .owl-dots .owl-dot button {
+    pointer-events: auto !important;
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 991.98px) {
+   
+    .section-title,.impact-title{
+        font-size: 22px;
+    }
+    .card-text{
+        font-size: 16px;
+
+    }
+    .card-number{
+        font-size: 18px;
+
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .pillars-section .col-md-4 {
+        width: 50%;
+    }
+}
+
+
 
 /* Footer styles moved to css/header-footer.css */
