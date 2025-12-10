@@ -72,7 +72,7 @@ $(document).ready(function(){
         center: true,
         items: 3,
         loop: true,
-        // autoplay: true,
+        autoplay: true,
         margin: 30,
         nav: false,
         navText: ["<i class='bi bi-chevron-left'></i>", "<i class='bi bi-chevron-right'></i>"],
