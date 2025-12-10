@@ -249,6 +249,24 @@
     margin-bottom: 20px;
 }
 
+.contact-us-column {
+    flex: 0 0 70%;
+    max-width: 70%;
+}
+
+.follow-us-wrapper {
+    flex: 0 0 30%;
+    max-width: 30%;
+}
+
+@media (max-width: 767.98px) {
+    .contact-us-column,
+    .follow-us-wrapper {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
 /* Tablet breakpoint */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
      .footer-contact-row {
@@ -260,6 +278,13 @@
     .follow-us-wrapper {
         justify-content: flex-start !important;
     }
+}
+
+.footer-contact-row a {
+    text-decoration: none !important;
+}
+.footer-contact-row a {
+    color: inherit;
 }
 .social-icons {
     margin-top: 0px;
