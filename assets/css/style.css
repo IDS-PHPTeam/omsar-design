@@ -499,8 +499,9 @@
     color: #fff;
     transition: transform 0.3s ease;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom center;
     background-size: inherit;
+    background-color: #192D50;
 }
 
 .pillar-card:hover {
@@ -549,15 +550,15 @@
 
 /* Background Image Layer */
 .pillar-digital {
-    background-image: url('../images/digital-trans.svg');
+    background-image: url('../images/digital-transformation-icon.svg');
 }
 
 .pillar-corruption {
-    background-image: url('../images/anti-corrup.svg');
+    background-image: url('../images/anti-corruption-icon.svg');
 }
 
 .pillar-reform {
-    background-image: url('../images/admin-reform.svg');
+    background-image: url('../images/admin-reform-icon.svg');
 }
 
 
@@ -1270,6 +1271,8 @@
     }
 }
 
-
+.testimonials-carousel .owl-item.active{
+    margin-top: 30px;
+}
 
 /* Footer styles moved to css/header-footer.css */

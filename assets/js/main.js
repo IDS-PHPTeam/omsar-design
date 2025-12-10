@@ -60,9 +60,9 @@ $(document).ready(function(){
                 items: 3,
                 stagePadding: 150 // Full padding for desktop layout: 1/2, 1, 1, 1/2
             },
-            1400:{  // Large desktop screens
-                items: 4,
-                stagePadding: 200
+            1600:{   // Large monitors
+                items: 3,
+                stagePadding: 250
             }
         }
     });
@@ -72,7 +72,7 @@ $(document).ready(function(){
         center: true,
         items: 3,
         loop: true,
-        autoplay: true,
+        // autoplay: true,
         margin: 30,
         nav: false,
         navText: ["<i class='bi bi-chevron-left'></i>", "<i class='bi bi-chevron-right'></i>"],
