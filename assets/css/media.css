@@ -1,0 +1,113 @@
+/* ------------------------------------------ */
+/*              Media Page Section            */
+/* ------------------------------------------ */
+.media-page-section {
+    /* padding-top: 40px; */
+    padding-bottom: 60px;
+}
+
+
+/* News Card Link - Makes entire card clickable */
+.news-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+}
+
+.news-card-link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* News Cards - Using same styling as news-carousel */
+.media-page-section .news-card {
+    position: relative;
+    height: 415px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* Background image layer for zoom effect */
+.media-page-section .news-card::before {
+    content: '';
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+    pointer-events: none;
+}
+
+/* Zoom effect on hover */
+.media-page-section .news-card:hover::before {
+    transform: scale(1.2);
+}
+
+.media-page-section .news-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Ensure buttons align at bottom regardless of title length */
+.media-page-section .news-title {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.media-page-section .news-content .btn {
+    margin-top: auto;
+}
+
+/* View All Projects Button */
+.btn-load-more-projects {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 37px;
+    padding: 14px 32px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-load-more-projects:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .media-page-section .news-card {
+        height: 350px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .media-page-section {
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+
+    .media-page-section .news-card {
+        height: 300px;
+    }
+
+    .btn-load-more-projects {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+

@@ -64,8 +64,26 @@ $(document).ready(function(){
                 items: 3,
                 stagePadding: 250
             }
+        },
+        onInitialized: function() {
+            // Copy inline background-image to CSS variable for news cards zoom effect
+            updateNewsCardBackgrounds();
+        },
+        onTranslated: function() {
+            // Update backgrounds after carousel translation (for cloned items)
+            updateNewsCardBackgrounds();
         }
     });
+
+    // Function to copy inline background-image to CSS variable for news cards
+    function updateNewsCardBackgrounds() {
+        $(".news-carousel .news-card").each(function() {
+            const bgImage = $(this).css('background-image');
+            if (bgImage && bgImage !== 'none') {
+                $(this).css('--bg-image', bgImage);
+            }
+        });
+    }
 
     // Testimonials Carousel
     $(".testimonials-carousel").owlCarousel({

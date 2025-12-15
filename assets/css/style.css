@@ -815,21 +815,56 @@
 .news-carousel.owl-theme .owl-dots .owl-dot.active span{
     background: #000 !important;
 }
+/* Ensure news carousel items have overflow hidden for zoom effect */
+.news-carousel .item {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
 .news-card {
     position: relative;
     height: 415px;
     /* Updated from screenshot (approx 430.36) */
     border-radius: 20px;
     /* Updated from screenshot */
-    background-size: auto;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
     transition: transform 0.3s ease;
 }
 
+/* Background image layer for zoom effect using transform */
+.news-carousel .news-card::before {
+    content: '';
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+    pointer-events: none;
+}
+
+/* Ensure content stays above the background layer */
+.news-card .news-content {
+    position: relative;
+    z-index: 2;
+}
+
 .news-card:hover {
     transform: translateY(-5px);
+}
+
+/* Zoom effect on the background image using transform scale - only for news-carousel */
+.news-carousel .news-card:hover::before {
+    transform: scale(1.2);
 }
 
 /* Dark Overlay */

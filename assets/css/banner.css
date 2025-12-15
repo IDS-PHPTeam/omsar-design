@@ -1,0 +1,75 @@
+/* ------------------------------------------ */
+/*              Page Banner Section           */
+/* ------------------------------------------ */
+.page-banner {
+    margin-top: 90px;
+    /* Account for fixed navbar */
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+/* Breadcrumb spacing area */
+.breadcrumb-space {
+    min-height: 24px;
+    margin-bottom: 20px;
+}
+
+/* Page Title */
+.page-banner-title {
+    font-weight: 700;
+    font-size: 48px;
+    color: #000000;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+/* Page Subtitle */
+.page-banner-subtitle {
+    font-weight: 400;
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .page-banner {
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+
+    .page-banner-title {
+        font-size: 36px;
+    }
+
+    .page-banner-subtitle {
+        font-size: 16px;
+    }
+
+    .breadcrumb-space {
+        min-height: 20px;
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .page-banner {
+        padding-top: 24px;
+        padding-bottom: 16px;
+    }
+
+    .page-banner-title {
+        font-size: 28px;
+    }
+
+    .page-banner-subtitle {
+        font-size: 14px;
+    }
+
+    .breadcrumb-space {
+        min-height: 16px;
+        margin-bottom: 12px;
+    }
+}
+
