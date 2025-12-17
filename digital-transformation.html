@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Transformation - OMS Design</title>
+    <!-- Bootstrap 5.3.3 CSS (via CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons (via CDN) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts: Inter (Importing a range of weights) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/header-footer.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+    <link rel="stylesheet" href="assets/css/banner.css">
+    <link rel="stylesheet" href="assets/css/digital-transformation.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
+        <div class="container">
+            <!-- Logo (Order 1) -->
+            <a class="navbar-brand me-auto me-lg-0" href="index.html">
+                <img src="assets/images/omsar-logo.svg" alt="Republic of Lebanon OMSAR" class="logo-image">
+            </a>
+
+            <!-- Mobile Icons: Visible on all screens, positioned by flex -->
+            <div class="d-flex align-items-center order-2 order-lg-3 ms-auto ms-lg-0 me-3 me-lg-0 action-icons">
+                <a href="#" class="text-dark me-3 search-icon">
+                    <i class="bi bi-search fs-5"></i>
+                </a>
+                <a href="#" class="lang-toggle">
+                    ع
+                </a>
+            </div>
+
+            <!-- Toggler (Burger Menu) -->
+            <button class="navbar-toggler collapsed order-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar top-bar"></span>
+                <span class="icon-bar middle-bar"></span>
+                <span class="icon-bar bottom-bar"></span>
+            </button>
+
+            <!-- Menu Items -->
+            <div class="collapse navbar-collapse order-lg-2" id="mainNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-medium">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Mission</a></li>
+                            <li><a class="dropdown-item" href="#">History</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Pillars
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="digital-transformation.html">Digital Transformation</a></li>
+                            <li><a class="dropdown-item" href="#">Pillar 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Projects and Archives</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">News And Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Open Data</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Get Engaged
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Careers</a></li>
+                            <li><a class="dropdown-item" href="#">Feedback</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="background">
+        <!-- Page Banner -->
+        <section class="page-banner">
+            <div class="container">
+                <!-- Breadcrumb Space -->
+                <div class="breadcrumb-space"></div>
+                <!-- Banner Content -->
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="page-banner-title">Digital Transformation</h1>
+                        <p class="page-banner-subtitle">Modern services, smarter institutions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Digital Transformation Page Content -->
+        <div class="digital-transformation-page">
+            <div class="container-fluid">
+                <div class="row">
+                <!-- Left Sidebar Navigation -->
+                <div class="col-lg-3">
+                    <div class="sidebar">
+                        <ul class="sidebar-nav-list">
+                            <li class="sidebar-nav-item">
+                                <a href="#overview" class="sidebar-nav-link active">Overview</a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#projects" class="sidebar-nav-link">Projects</a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a class="sidebar-nav-link has-dropdown" data-bs-toggle="collapse" href="#collapseLebanon" 
+                                   role="button" aria-expanded="false" aria-controls="collapseLebanon">
+                                    Lebanon Digital Acceleration Project
+                                    <i class="bi bi-chevron-right sidebar-dropdown-icon"></i>
+                                </a>
+                                <ul class="sidebar-submenu collapse" id="collapseLebanon">
+                                    <li><a href="#" class="sidebar-nav-link">Sub-item 1</a></li>
+                                    <li><a href="#" class="sidebar-nav-link">Sub-item 2</a></li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a class="sidebar-nav-link has-dropdown" data-bs-toggle="collapse" href="#collapseStrategies" 
+                                   role="button" aria-expanded="false" aria-controls="collapseStrategies">
+                                    Strategies, Guidelines, Standards and Policies
+                                    <i class="bi bi-chevron-right sidebar-dropdown-icon"></i>
+                                </a>
+                                <ul class="sidebar-submenu collapse" id="collapseStrategies">
+                                    <li><a href="#" class="sidebar-nav-link">Sub-item 1</a></li>
+                                    <li><a href="#" class="sidebar-nav-link">Sub-item 2</a></li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a class="sidebar-nav-link has-dropdown" data-bs-toggle="collapse" href="#collapsePortals" 
+                                   role="button" aria-expanded="false" aria-controls="collapsePortals">
+                                    Portals and Websites
+                                    <i class="bi bi-chevron-right sidebar-dropdown-icon"></i>
+                                </a>
+                                <ul class="sidebar-submenu collapse" id="collapsePortals">
+                                    <li><a href="#" class="sidebar-nav-link">Sub-item 1</a></li>
+                                    <li><a href="#" class="sidebar-nav-link">Sub-item 2</a></li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a class="sidebar-nav-link has-dropdown" data-bs-toggle="collapse" href="#collapseSimplification" 
+                                   role="button" aria-expanded="false" aria-controls="collapseSimplification">
+                                    Simplification of Procedures
+                                    <i class="bi bi-chevron-right sidebar-dropdown-icon"></i>
+                                </a>
+                                <ul class="sidebar-submenu collapse" id="collapseSimplification">
+                                    <li><a href="#" class="sidebar-nav-link">Sub-item 1</a></li>
+                                    <li><a href="#" class="sidebar-nav-link">Sub-item 2</a></li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a class="sidebar-nav-link has-dropdown" data-bs-toggle="collapse" href="#collapseInfrastructure" 
+                                   role="button" aria-expanded="false" aria-controls="collapseInfrastructure">
+                                    Infrastructure, Software Products, Enterprise Agreements
+                                    <i class="bi bi-chevron-right sidebar-dropdown-icon"></i>
+                                </a>
+                                <ul class="sidebar-submenu collapse" id="collapseInfrastructure">
+                                    <li><a href="#" class="sidebar-nav-link">Sub-item 1</a></li>
+                                    <li><a href="#" class="sidebar-nav-link">Sub-item 2</a></li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#ict-training" class="sidebar-nav-link">ICT Training</a>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a class="sidebar-nav-link has-dropdown" data-bs-toggle="collapse" href="#collapseAssistance" 
+                                   role="button" aria-expanded="false" aria-controls="collapseAssistance">
+                                    Technical Assistance
+                                    <i class="bi bi-chevron-right sidebar-dropdown-icon"></i>
+                                </a>
+                                <ul class="sidebar-submenu collapse" id="collapseAssistance">
+                                    <li><a href="#" class="sidebar-nav-link">Sub-item 1</a></li>
+                                    <li><a href="#" class="sidebar-nav-link">Sub-item 2</a></li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-nav-item">
+                                <a href="#stakeholder" class="sidebar-nav-link">Stakeholder Consultation Workshops</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Main Content -->
+                <div class="col-lg-9">
+                    <div class="dt-main-content">
+                        <h1 class="dt-content-title">Digital Transformation</h1>
+                        
+                        <p class="dt-content-text">
+                            Digital transformation is the process of using digital technologies to fundamentally change how organizations operate, deliver services, and create value.
+                        </p>
+                        
+                        <p class="dt-content-text">
+                            In the public sector, like in government ministries, it means improving services, efficiency, and transparency by adopting tools such as online platforms, data systems, automation, and digital communication.
+                        </p>
+                        
+                        <p class="dt-content-text">
+                            It's not just about technology—it's about changing mindsets, processes, and structures to better serve people in a digital world.
+                        </p>
+
+                        <!-- Statistics Cards -->
+                        <div class="dt-stats-grid">
+                            <!-- Card 1: Digital Services Launched -->
+                            <div class="dt-stat-card dt-stat-card-1">
+                                <div class="card-content">
+                                    <h3 class="card-number">120+</h3>
+                                    <p class="card-text">Digital Services Launched</p>
+                                </div>
+                            </div>
+
+                            <!-- Card 2: Cloud Services -->
+                            <div class="dt-stat-card dt-stat-card-2">
+                                <div class="card-content">
+                                    <h3 class="card-number">45+</h3>
+                                    <p class="card-text">Cloud Services Deployed</p>
+                                </div>
+                            </div>
+
+                            <!-- Card 3: Citizens & Businesses Reached -->
+                            <div class="dt-stat-card dt-stat-card-3">
+                                <div class="card-content">
+                                    <h3 class="card-number">1.8M+</h3>
+                                    <p class="card-text">Citizens & Businesses Reached</p>
+                                </div>
+                            </div>
+
+                            <!-- Card 4: Data Systems & Platforms Deployed -->
+                            <div class="dt-stat-card dt-stat-card-4">
+                                <div class="card-content">
+                                    <h3 class="card-number">25+</h3>
+                                    <p class="card-text">Data Systems & Platforms Deployed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row contact-section">
+                <!-- Contact Us - Left Side -->
+                <div class="col-12 col-md-6">
+                    <h5 class="footer-heading mb-4">CONTACT US</h5>
+                    <div class="footer-contact-row d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                            <img src="assets/images/location-icon.svg" alt="Location" class="footer-contact-icon me-2">
+                            <span><span class="fw-bold me-1">Address:</span>Beirut, Lebanon</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img src="assets/images/phone-icon.svg" alt="Phone" class="footer-contact-icon me-2">
+                            <span><span class="fw-bold me-1">Telephone:</span>+(961) 1 371505</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img src="assets/images/email-icon.svg" alt="Email" class="footer-contact-icon me-2">
+                            <span><span class="fw-bold me-1">Email:</span>info@omsar.gov.lb</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Follow Us - Right Side -->
+                <div class="col-12 col-md-6 d-flex justify-content-lg-end follow-us-wrapper">
+                    <div>
+                        <h5 class="footer-heading mb-4">FOLLOW US</h5>
+                        <div class="social-icons d-flex gap-3">
+                            <a href="#" class="social-icon-link">
+                                <img src="assets/images/facebook.svg" alt="Facebook" class="social-icon-img">
+                            </a>
+                            <a href="#" class="social-icon-link">
+                                <img src="assets/images/linkedin.svg" alt="LinkedIn" class="social-icon-img">
+                            </a>
+                            <a href="#" class="social-icon-link">
+                                <img src="assets/images/youtube.svg" alt="YouTube" class="social-icon-img">
+                            </a>
+                            <a href="#" class="social-icon-link">
+                                <img src="assets/images/x.svg" alt="X (Twitter)" class="social-icon-img">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="row py-4 copyright-row">
+                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                    <p class="mb-0 small text-muted copyright-text">Office Of The Minister Of State For
+                        Administrative Reform 2025 ©</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 small text-muted copyright-text">Designed & Developed By IDS</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    <!-- Bootstrap 5.3.3 JS Bundle (via CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scroll Script -->
+    <script>
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar-scroll');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white', 'shadow-sm');
+            } else {
+                navbar.classList.remove('bg-white', 'shadow-sm');
+            }
+        });
+
+        // Handle navigation link clicks
+        document.querySelectorAll('.sidebar-nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Remove active class from all links
+                document.querySelectorAll('.sidebar-nav-link').forEach(l => l.classList.remove('active'));
+                // Add active class to clicked link (if it's not a dropdown toggle)
+                if (!this.classList.contains('has-dropdown')) {
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Accordion behavior: close others when one opens
+        const collapseElements = document.querySelectorAll('.sidebar-submenu');
+        collapseElements.forEach(collapse => {
+            collapse.addEventListener('show.bs.collapse', function(e) {
+                // Close all other accordions
+                collapseElements.forEach(otherCollapse => {
+                    if (otherCollapse !== e.target && otherCollapse.classList.contains('show')) {
+                        const bsCollapse = bootstrap.Collapse.getInstance(otherCollapse);
+                        if (bsCollapse) {
+                            bsCollapse.hide();
+                        } else {
+                            // If no instance exists, create one and hide it
+                            new bootstrap.Collapse(otherCollapse, { toggle: false }).hide();
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
+
