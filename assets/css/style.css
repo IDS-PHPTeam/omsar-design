@@ -916,7 +916,7 @@
 }
 
 .news-date {
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 300;
     opacity: 0.9;
     display: flex;
@@ -1081,6 +1081,7 @@
     line-height: 1.6;
     color: #333;
     /* max-width: 95%; */
+    text-align: justify ;
 }
 
 /* Attribution */
@@ -1209,7 +1210,7 @@
 .testimonial-author .author-name, .author-role{
     color: #000;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 500;
     font-style: italic;
 }
 
