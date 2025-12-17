@@ -35,12 +35,16 @@
     border-right: 1.5px solid #000000;
     border-bottom: 1.5px solid #000000;
     transform: rotate(45deg);
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    margin-left: 4px;
 }
 
 /* Rotate chevron when dropdown is open (point up) */
 .nav-link.dropdown-toggle[aria-expanded="true"]::after {
     transform: rotate(225deg);
-    margin-top: 2px;
+    top: 4px;
 }
 
 /* Dropdown Menu Hover Functionality for Desktop */
