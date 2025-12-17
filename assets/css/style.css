@@ -606,6 +606,24 @@
     /* Ensure the background is positioned right on mobile */
 }
 
+/* Background image layer for zoom effect using transform */
+.projects-carousel .project-card::before {
+    content: '';
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+    pointer-events: none;
+}
+
 
 .projects-carousel-wrapper {
     position: relative;
@@ -748,13 +766,22 @@
        Adding padding INSIDE this wrapper fixes the clip. */
 }
 
-.projects-carousel.owl-theme .owl-dots .owl-dot span{
-    background: #6EA8FE !important;
+.projects-carousel.owl-theme .owl-dots .owl-dot span,
+.hero-banner-carousel.owl-theme .owl-dots .owl-dot span,
+.news-carousel.owl-theme .owl-dots .owl-dot span{
+    background: transparent !important;
+    border:#192D50 1px solid
+
 }
 
-.projects-carousel.owl-theme .owl-dots .owl-dot.active span{
-    background: #0267ff !important;
+.projects-carousel.owl-theme .owl-dots .owl-dot.active span,
+.hero-banner-carousel.owl-theme .owl-dots .owl-dot.active span,
+.news-carousel.owl-theme .owl-dots .owl-dot.active span{
+    background: #192D50 !important;
 }
+
+
+
 
 /* Owl Dots Styling */
 .owl-theme .owl-dots .owl-dot span {
@@ -807,29 +834,57 @@
     overflow: hidden;
 }
 
-.news-carousel.owl-theme .owl-dots .owl-dot span{
-    background: #494949 !important;
-    border: #000;
+/* Ensure news carousel items have overflow hidden for zoom effect */
+.news-carousel .item {
+    overflow: hidden;
+    border-radius: 20px;
 }
 
-.news-carousel.owl-theme .owl-dots .owl-dot.active span{
-    background: #000 !important;
-}
 .news-card {
     position: relative;
-    height: 415px;
+    height: 370px;
     /* Updated from screenshot (approx 430.36) */
     border-radius: 20px;
     /* Updated from screenshot */
-    background-size: auto;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
     transition: transform 0.3s ease;
 }
 
-.news-card:hover {
+/* Background image layer for zoom effect using transform */
+.news-carousel .news-card::before {
+    content: '';
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+    pointer-events: none;
+}
+
+/* Ensure content stays above the background layer */
+.news-card .news-content {
+    position: relative;
+    z-index: 2;
+}
+
+.news-card:hover,.project-card:hover {
     transform: translateY(-5px);
+}
+
+/* Zoom effect on the background image using transform scale */
+.news-carousel .news-card:hover::before,
+.projects-carousel .project-card:hover::before {
+    transform: scale(1.2);
 }
 
 /* Dark Overlay */
@@ -855,12 +910,14 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     align-items: flex-start;
     color: #fff;
 }
 
 .news-date {
-    font-size: 14px;
+    font-size: 19px;
+    font-weight: 300;
     opacity: 0.9;
     display: flex;
     align-items: center;
@@ -870,6 +927,7 @@
     width: 28px !important;
     height: 28px;
     margin-right: 8px;
+    margin-left: 8px;
     display: inline-block;
 }
 
@@ -879,7 +937,7 @@
 
 .news-title {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 23px;
     line-height: 1.4;
     margin-bottom: 20px;
     display: -webkit-box;
@@ -1019,10 +1077,10 @@
     /* Or a Serif font if preferred */
     font-style: italic;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.6;
     color: #333;
-    max-width: 95%;
+    /* max-width: 95%; */
 }
 
 /* Attribution */
@@ -1098,14 +1156,14 @@
     font-style: italic;
     font-size: 16px;
     line-height: 1.6;
-    font-weight: 500;
+    font-weight: 300;
     color: #000;
     margin-bottom: 30px;
 }
 
 /* Author */
 .author-name {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 16px;
     color: #000;
     margin-bottom: 5px;
@@ -1154,6 +1212,10 @@
     font-weight: 400;
     font-style: italic;
 }
+
+/* .testimonial-author .author-name{
+    font-weight: 700;
+} */
 
 /* .owl-item.center .author-name {
     color: #000;
@@ -1276,3 +1338,8 @@
 }
 
 /* Footer styles moved to css/header-footer.css */
+
+.no-style-link {
+    color: inherit;       /* Use parent text color instead of default blue */
+    text-decoration: none; /* Remove underline */
+}

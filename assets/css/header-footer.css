@@ -23,6 +23,26 @@
     padding-right: 1rem !important;
 }
 
+/* Custom Dropdown Arrow Styling - Simple downward chevron */
+.nav-link.dropdown-toggle::after {
+    /* Remove Bootstrap's default caret */
+    width: 0;
+    height: 0;
+    border: none;
+    /* Create simple downward chevron - V shape pointing down */
+    width: 6px;
+    height: 6px;
+    border-right: 1.5px solid #000000;
+    border-bottom: 1.5px solid #000000;
+    transform: rotate(45deg);
+}
+
+/* Rotate chevron when dropdown is open (point up) */
+.nav-link.dropdown-toggle[aria-expanded="true"]::after {
+    transform: rotate(225deg);
+    margin-top: 2px;
+}
+
 /* Dropdown Menu Hover Functionality for Desktop */
 @media (min-width: 992px) {
     .nav-item.dropdown {
@@ -249,6 +269,24 @@
     margin-bottom: 20px;
 }
 
+.contact-us-column {
+    flex: 0 0 70%;
+    max-width: 70%;
+}
+
+.follow-us-wrapper {
+    flex: 0 0 30%;
+    max-width: 30%;
+}
+
+@media (max-width: 767.98px) {
+    .contact-us-column,
+    .follow-us-wrapper {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
 /* Tablet breakpoint */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
      .footer-contact-row {
@@ -260,6 +298,13 @@
     .follow-us-wrapper {
         justify-content: flex-start !important;
     }
+}
+
+.footer-contact-row a {
+    text-decoration: none !important;
+}
+.footer-contact-row a {
+    color: inherit;
 }
 .social-icons {
     margin-top: 0px;
