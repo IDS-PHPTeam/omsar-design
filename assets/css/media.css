@@ -24,7 +24,7 @@
 /* News Cards - Using same styling as news-carousel */
 .media-page-section .news-card {
     position: relative;
-    height: 415px;
+    height: 293.78px;
     border-radius: 20px;
     background-size: cover;
     background-position: center;
@@ -61,16 +61,40 @@
     transform: translateY(-5px);
 }
 
-/* Ensure buttons align at bottom regardless of title length */
+/* Upcoming Badge */
+.news-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 2px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    z-index: 3;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Position all content at the bottom */
+.media-page-section .news-content {
+    justify-content: flex-end;
+}
+
 .media-page-section .news-title {
-    flex: 1;
-    margin-bottom: 0;
+    margin-bottom: 16px;
+    padding-top: 0 !important;
+    font-size: 18px !important;
 }
 
-.media-page-section .news-content .btn {
-    margin-top: auto;
+.media-page-section .news-date {
+    margin-bottom: 12px;
 }
-
+.media-page-section .news-card .news-content .btn {
+    padding: 2px;
+}
 /* View All Projects Button */
 .btn-load-more-projects {
     background-color: #000000;
@@ -111,3 +135,7 @@
     }
 }
 
+.read-more-button{
+    border: 1px solid white;
+    color: white;
+}

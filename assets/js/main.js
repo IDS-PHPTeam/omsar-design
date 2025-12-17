@@ -19,6 +19,7 @@ $(document).ready(function(){
         items: 2,
         loop: true,
         autoplay: true,
+        autoplayHoverPause: true, //stop on hover
         margin: 20,
         nav: false,
         dots: true,
@@ -42,6 +43,7 @@ $(document).ready(function(){
         items: 3, 
         loop: true,
         autoplay: true,
+        autoplayHoverPause: true, //stop on hover
         margin: 20,
         nav: false,
         dots: true,
@@ -91,6 +93,7 @@ $(document).ready(function(){
         items: 3,
         loop: true,
         autoplay: true,
+        autoplayHoverPause: true, //stop on hover
         margin: 30,
         nav: false,
         navText: ["<i class='bi bi-chevron-left'></i>", "<i class='bi bi-chevron-right'></i>"],

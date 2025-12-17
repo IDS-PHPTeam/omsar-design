@@ -23,6 +23,26 @@
     padding-right: 1rem !important;
 }
 
+/* Custom Dropdown Arrow Styling - Simple downward chevron */
+.nav-link.dropdown-toggle::after {
+    /* Remove Bootstrap's default caret */
+    width: 0;
+    height: 0;
+    border: none;
+    /* Create simple downward chevron - V shape pointing down */
+    width: 6px;
+    height: 6px;
+    border-right: 1.5px solid #000000;
+    border-bottom: 1.5px solid #000000;
+    transform: rotate(45deg);
+}
+
+/* Rotate chevron when dropdown is open (point up) */
+.nav-link.dropdown-toggle[aria-expanded="true"]::after {
+    transform: rotate(225deg);
+    margin-top: 2px;
+}
+
 /* Dropdown Menu Hover Functionality for Desktop */
 @media (min-width: 992px) {
     .nav-item.dropdown {
