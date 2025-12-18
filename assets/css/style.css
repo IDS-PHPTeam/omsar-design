@@ -718,7 +718,7 @@
 }
 
 /* LEFT FADE */
-.projects-carousel-wrapper::before {
+/* .projects-carousel-wrapper::before {
     content: "";
     position: absolute;
     top: 0;
@@ -728,10 +728,10 @@
     background: linear-gradient(to right, #fff, transparent);
     z-index: 10;
     pointer-events: none;
-}
+} */
 
 /* RIGHT FADE */
-.projects-carousel-wrapper::after {
+/* .projects-carousel-wrapper::after {
     content: "";
     position: absolute;
     top: 0;
@@ -741,6 +741,27 @@
     background: linear-gradient(to left, #fff, transparent);
     z-index: 10;
     pointer-events: none;
+} */
+
+/* Clickable shadow overlays */
+.carousel-shadow-overlay {
+    position: absolute;
+    top: 0;
+    width: 160px;
+    height: 100%;
+    z-index: 11;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.carousel-shadow-left {
+    left: 0;
+    background: linear-gradient(to right, #fff, transparent);
+}
+
+.carousel-shadow-right {
+    right: 0;
+    background: linear-gradient(to left, #fff, transparent);
 }
 /* Ensure radius is visible and background position is correct on mobile */
 @media (max-width: 768px) {
@@ -776,6 +797,9 @@
     .projects-carousel-wrapper::before,
     .projects-carousel-wrapper::after{
         content: unset !important;
+    }
+    .carousel-shadow-overlay {
+        display: none !important;
     }
 }
 
@@ -1021,7 +1045,7 @@
 }
 
 .news-date-icon {
-    width: 28px !important;
+    width: 24px !important;
     height: 28px;
     margin-right: 8px;
     margin-left: 8px;

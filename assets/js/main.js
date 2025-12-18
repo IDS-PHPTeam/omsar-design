@@ -14,7 +14,7 @@ window.addEventListener('scroll', function() {
 $(document).ready(function(){
     
     // Latest Projects Carousel
-    $(".projects-carousel").owlCarousel({
+    var projectsCarousel = $(".projects-carousel").owlCarousel({
         center: true,
         items: 2,
         loop: true,
@@ -37,6 +37,49 @@ $(document).ready(function(){
             }
         }
     });
+
+    // Handle clicks on shadow overlays for projects carousel
+    function handleShadowOverlayClick() {
+        // Scope to projects carousel wrapper only
+        const $wrapper = $('.projects-carousel-wrapper');
+        
+        // Handle left shadow overlay click
+        $wrapper.find('.carousel-shadow-left').off('click').on('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Get page direction (LTR or RTL) - check on each click to handle dynamic changes
+            const isRTL = document.documentElement.dir === 'rtl' || 
+                         getComputedStyle(document.documentElement).direction === 'rtl';
+            
+            // In LTR: left = previous, In RTL: left = next (reversed)
+            if (isRTL) {
+                projectsCarousel.trigger('next.owl.carousel');
+            } else {
+                projectsCarousel.trigger('prev.owl.carousel');
+            }
+        });
+        
+        // Handle right shadow overlay click
+        $wrapper.find('.carousel-shadow-right').off('click').on('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Get page direction (LTR or RTL) - check on each click to handle dynamic changes
+            const isRTL = document.documentElement.dir === 'rtl' || 
+                         getComputedStyle(document.documentElement).direction === 'rtl';
+            
+            // In LTR: right = next, In RTL: right = previous (reversed)
+            if (isRTL) {
+                projectsCarousel.trigger('prev.owl.carousel');
+            } else {
+                projectsCarousel.trigger('next.owl.carousel');
+            }
+        });
+    }
+    
+    // Initialize shadow overlay clicks after carousel is ready
+    handleShadowOverlayClick();
 
     // Latest News Carousel
     $(".news-carousel").owlCarousel({
