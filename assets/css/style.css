@@ -215,7 +215,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url('../images/background.svg');
+    background-image: var(--background-pattern-url, url('../images/background.svg'));
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
